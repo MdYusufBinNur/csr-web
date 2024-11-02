@@ -1,0 +1,12 @@
+
+.bg_darker{
+    background: #eeece8;
+}
+.b-r-15 {
+    border-radius: 15px;
+}
+
+.v-btn--success {
+    background-color: #25D366; /* WhatsApp Green */
+    color: white;
+}

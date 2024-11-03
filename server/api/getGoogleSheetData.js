@@ -3,6 +3,12 @@ import {google} from 'googleapis';
 import {readFileSync} from 'fs';
 
 export default defineEventHandler(async () => {
+
+    const id = '1qy2YsenHx3CkzLGj8H9AnoSl7vZR0znZDmRAH7rTuNs';
+    const gid = '981173174';
+    const url = 'https://docs.google.com/spreadsheets/d/1qy2YsenHx3CkzLGj8H9AnoSl7vZR0znZDmRAH7rTuNs/gviz/tq?tqx=out:json&tq&gid=981173174';
+
+
     // Load service account credentials
     const credentials = JSON.parse(readFileSync('cred.json'));
 
@@ -13,13 +19,14 @@ export default defineEventHandler(async () => {
     });
     const sheets = google.sheets({ version: 'v4', auth });
 
+
     // Specify your Google Sheet ID and range of data
     const spreadsheetId = '1RQMUjy18JimDY6OSCwSl7YFE6JQc86wUFEQoLaFdfMs';
     const range = 'A:G';
     // Adjust range based on your needs
     // Specify your Google Sheet ID and range of data
     // const spreadsheetId = '1qy2YsenHx3CkzLGj8H9AnoSl7vZR0znZDmRAH7rTuNs';
-    // const range = 'A1:E93';
+    // const range = 'A:G';
 
     try {
         const response = await sheets.spreadsheets.values.get({ spreadsheetId, range });

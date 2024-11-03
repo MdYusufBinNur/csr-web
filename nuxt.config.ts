@@ -32,5 +32,10 @@ export default defineNuxtConfig({
         '/old-page': {
             redirect: {to: '/new-page', statusCode: 302}
         }
-    }
+    },
+    server: {
+        // @ts-ignore
+        port: process.env.PORT || 3001,
+        host: '0.0.0.0'
+    },
 })
